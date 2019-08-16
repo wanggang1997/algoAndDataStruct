@@ -1,4 +1,4 @@
-package com.pers.algo.graphic.Demo;
+package com.pers.algo.graphic.demo;
 
 import javax.swing.*;
 import java.awt.*;

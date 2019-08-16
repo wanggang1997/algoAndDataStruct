@@ -1,4 +1,4 @@
-package com.pers.algo.graphic;
+package com.pers.algo.graphic.module;
 
 public class JFrameDemo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.pers.algo.graphic;
+package com.pers.algo.graphic.module;
 
 public class Circle {
     public int x, y;

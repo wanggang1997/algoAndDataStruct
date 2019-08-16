@@ -1,4 +1,4 @@
-package com.pers.algo.graphic;
+package com.pers.algo.graphic.module;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
