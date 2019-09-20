@@ -38,7 +38,7 @@ public class ArrayQueue <E> implements Queue<E> {
     }
 
     @Override
-    public boolean isEmpey() {
+    public boolean isEmpty() {
         return array.isEmpty();
     }
 

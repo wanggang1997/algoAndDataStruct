@@ -1,20 +1,16 @@
 package com.pers.alan.struct.array;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @program: algoAndDataStruct
  * @description: 动态数组
  * @author: wg
- * @create: 2019-09-03 23:14
+ * @create: 2019-09-03
  **/
 public class DynamicArray<E> {
 
 
     private E[] data;
+    //size>0时 != maxIndex
     private int size;
     private int capacity;
 
@@ -28,11 +24,19 @@ public class DynamicArray<E> {
         this(10);
     }
 
+    public DynamicArray(E[] arr) {
+        this.data =  (E[]) (new Object[arr.length]);
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+        size = arr.length;
+    }
+
     /*/**
      * @title
      * @description 返回当前动态数组使用的容量
      * @author wg
-     * @updateTime 2019/9/3 23:24
+     * @updateTime 2019/9/3
      * @return: int
      * @throws
      */
@@ -44,7 +48,7 @@ public class DynamicArray<E> {
      * @title
      * @description 返回当前动态数组是否为空
      * @author wg
-     * @updateTime 2019/9/3 23:25
+     * @updateTime 2019/9/3
      * @return: boolean
      * @throws
      */
@@ -56,7 +60,7 @@ public class DynamicArray<E> {
      * @title
      * @description 返回动态数组的容量大小
      * @author wg
-     * @updateTime 2019/9/3 23:28
+     * @updateTime 2019/9/3
      * @return: int
      * @throws
      */
@@ -70,11 +74,12 @@ public class DynamicArray<E> {
      * @author wg
      * @param: index
      * @param: e
-     * @updateTime 2019/9/4 10:17
+     * @updateTime 2019/9/4
      * @throws
      */
     public void add(int index, E e) {
 
+        //当数组容量达到capacity时 自动扩容
         if (size == capacity)
             resize(this.capacity<<1);
 
@@ -147,7 +152,7 @@ public class DynamicArray<E> {
      * @description  删除指定位置的元素e 并返回该元素
      *               !!!注意数组越界问题
      * @author wg
-     * @updateTime 2019/9/4 11:01
+     * @updateTime 2019/9/4
      * @return: int
      * @throws
      */
@@ -207,7 +212,7 @@ public class DynamicArray<E> {
      * @title
      * @description 自动扩容
      * @author wg
-     * @updateTime 2019/9/4 14:19
+     * @updateTime 2019/9/4
      * @throws
      */
     private void resize(int capacity) {
@@ -217,5 +222,15 @@ public class DynamicArray<E> {
             newData[i] = data[i];
         }
         data = newData;
+    }
+
+    //根据索引交换元素的位置
+    public void swap(int i, int j) {
+
+        if (i<0||i>size || j<0||j>size)
+            throw new IllegalArgumentException("The index is out of range.");
+        E t = data[i];
+        data[i] = data[j];
+        data[j] = t;
     }
 }

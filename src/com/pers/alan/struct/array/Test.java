@@ -1,7 +1,5 @@
 package com.pers.alan.struct.array;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 /**
  * @program: algoAndDataStruct
  * @description:
@@ -11,6 +9,26 @@ import org.omg.PortableInterceptor.INACTIVE;
 public class Test {
 
     public static void main(String[] args) {
+        System.out.println("第一个数组");
+        int []arr = new int[10];
+        for (int i = 0; i <10 ; i++) {
+            arr[i] = i;
+        }
+
+        for (int i = 0; i <10 ; i++) {
+            System.out.println(arr[i]);;
+        }
+
+        System.out.println("-------");
+
+        for (int i : arr) {
+            System.out.println(i);
+        }
+        System.out.println("-------");
+
+
+
+        System.out.println("二次封装的动态数组");
         DynamicArray<Integer> darr = new DynamicArray<>();
         for (int i = 0; i < 10; i++) {
             darr.addLast(i);

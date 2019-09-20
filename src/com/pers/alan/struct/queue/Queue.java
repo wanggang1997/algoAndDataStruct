@@ -9,7 +9,7 @@ public interface Queue <E>{
     //获取队首
     E getFront();
     //判空
-    boolean isEmpey();
+    boolean isEmpty();
     //获取队长
     int getSize();
 

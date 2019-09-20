@@ -22,21 +22,17 @@ public class LoopQueue<E> implements Queue<E> {
         front= tail =0;
         size=0;
     }
-
     public LoopQueue() {
         this(10);
     }
 
-    public int size(){
-        return size;
-    }
-
-    public boolean isEmpty(){
-        return size==0;
-    }
-
     public int getCapacity(){
         return capacity;
+    }
+
+    @Override
+    public boolean isEmpty(){
+        return size==0;
     }
 
     @Override
@@ -53,7 +49,7 @@ public class LoopQueue<E> implements Queue<E> {
     @Override
     public E deQueue() {
         //front 始终指向队首
-        if (isEmpey())
+        if (isEmpty())
             throw new IllegalArgumentException("DeQueue failed.The queue is empty.");
         E frontE = data[front];
         data[front] = null;
@@ -86,11 +82,6 @@ public class LoopQueue<E> implements Queue<E> {
     @Override
     public E getFront() {
         return data[front];
-    }
-
-    @Override
-    public boolean isEmpey() {
-        return size==0;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.pers.alan.struct.queue.test;
 
 import com.pers.alan.algo_struct.utils.PrintUtil;
-import com.pers.alan.struct.queue.ArrayQueue;
+import com.pers.alan.struct.queue.LinkedListQueue;
 import com.pers.alan.struct.queue.LoopQueue;
 import com.pers.alan.struct.queue.Queue;
 
@@ -28,10 +28,12 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        int opCount = 100000;
-        ArrayQueue<Integer>arrayQueue = new ArrayQueue<>();
-        testQueue(arrayQueue,100000);
+        int opCount = 1000000;
+        //ArrayQueue<Integer>arrayQueue = new ArrayQueue<>();
+        //testQueue(arrayQueue,opCount);
         LoopQueue<Integer>loopQueue = new LoopQueue<>();
-        testQueue(loopQueue,100000);
+        testQueue(loopQueue,opCount);
+        LinkedListQueue<Integer>linkedListQueue = new LinkedListQueue<>();
+        testQueue(linkedListQueue,opCount);
     }
 }
