@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CardLayoutDemo {
+
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("this is a card layout test");
 
